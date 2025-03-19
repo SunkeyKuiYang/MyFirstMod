@@ -2,12 +2,10 @@ package com.sunkey.mymod;
 
 
 import com.mojang.blaze3d.shaders.Effect;
+import com.sunkey.mymod.item.Voucher;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -54,6 +52,19 @@ public class ModItems {
                             .alwaysEat() // 允许随时使用，指任何饱腹度
                             .effect( () -> new MobEffectInstance(ModEffects.SUPER_EFFECT.get(), 600, 0), 1.0F)// 添加药水效果
                             .build())));
+
+    //super_block 超级方块（物品）
+    public static final RegistryObject<Item> SUPER_BLOCK_ITEM = ITEMS.register("super_block",
+            () -> new BlockItem(ModBlocks.SUPER_BLOCK.get(), new Item.Properties()));
+
+    //vending 自动贩卖机（物品）
+    public static final RegistryObject<Item> VENDING_ITEM = ITEMS.register("vending",
+            () -> new BlockItem(ModBlocks.VENDING.get(), new Item.Properties()));
+
+    // voucher 兑换券
+    public static final RegistryObject<Item> VOUCHER = ITEMS.register("voucher",
+            () -> new Voucher(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

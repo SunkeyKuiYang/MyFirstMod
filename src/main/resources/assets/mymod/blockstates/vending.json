@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mymod:block/vending"
+      },
+      {
+        "model": "mymod:block/vending"
+      },
+      {
+        "model": "mymod:block/vending",
+        "y": 180
+      },
+      {
+        "model": "mymod:block/vending",
+        "y": 180
+      }
+    ]
+  }
+}

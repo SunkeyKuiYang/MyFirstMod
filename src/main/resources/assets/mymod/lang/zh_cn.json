@@ -3,5 +3,8 @@
   "item.mymod.super_weapon": "超级剑",
   "item.mymod.super_food": "超级食物",
   "item.mymod.super_potion": "超级药水",
-  "main.mymod.mymod_tab": "我的模组"
+  "main.mymod.mymod_tab": "我的模组",
+  "block.mymod.super_block": "超级方块",
+  "block.mymod.vending": "自动贩卖机",
+  "item.mymod.voucher": "兑换券"
 }

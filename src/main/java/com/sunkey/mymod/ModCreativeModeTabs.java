@@ -33,6 +33,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUPER_WEAPON.get());
                         output.accept(ModItems.SUPER_FOOD.get());
                         output.accept(ModItems.SUPER_POTION.get());
+                        output.accept(ModItems.SUPER_BLOCK_ITEM.get());
+                        output.accept(ModItems.VENDING_ITEM.get());
+                        output.accept(ModItems.VOUCHER.get());
                     })
                     .build());
 

@@ -23,6 +23,7 @@ public class MyMod {
         IEventBus bus = context.getModEventBus();
         ModItems.register(bus); // 物品注册
         ModEffects.EFFECTS.register(bus); // 效果注册
+        ModBlocks.BLOCKS.register(bus); //方块注册
         ModCreativeModeTabs.CREATIVE_MODE_TABS.register(bus); // 创造模式物品栏注册
     }
 

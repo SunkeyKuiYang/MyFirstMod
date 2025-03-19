@@ -3,5 +3,8 @@
   "item.mymod.super_weapon": "Super Weapon",
   "item.mymod.super_food": "Super Food",
   "item.mymod.super_potion": "Super Potion",
-  "main.mymod.mymod_tab": "Mymod Tab"
+  "main.mymod.mymod_tab": "Mymod Tab",
+  "block.mymod.super_block": "Super Block",
+  "block.mymod.vending": "Vending",
+  "item.mymod.voucher": "Voucher"
 }

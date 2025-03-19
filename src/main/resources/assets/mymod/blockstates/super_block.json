@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mymod:block/super_block"
+      },
+      {
+        "model": "mymod:block/super_block"
+      },
+      {
+        "model": "mymod:block/super_block",
+        "y": 180
+      },
+      {
+        "model": "mymod:block/super_block",
+        "y": 180
+      }
+    ]
+  }
+}
