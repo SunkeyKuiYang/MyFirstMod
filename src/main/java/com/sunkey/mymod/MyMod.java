@@ -22,9 +22,9 @@ public class MyMod {
         LOGGER.info("Hello, Minecraft Modding!");
         IEventBus bus = context.getModEventBus();
         ModItems.register(bus); // 物品注册
-        ModEffects.EFFECTS.register(bus); // 效果注册
-        ModBlocks.BLOCKS.register(bus); //方块注册
-        ModCreativeModeTabs.CREATIVE_MODE_TABS.register(bus); // 创造模式物品栏注册
+        ModBlocks.register(bus); //方块注册
+        ModEffects.register(bus); // 效果注册
+        ModCreativeModeTabs.register(bus); // 创造模式物品栏注册
     }
 
 }

@@ -3,6 +3,8 @@ package com.sunkey.mymod;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -13,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
  * @Author Haoran_Jiang
  * @Date 2025/3/18 14:55
  */
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MyMod.MOD_ID);
@@ -33,5 +36,10 @@ public class ModBlocks {
                     .strength(5.0F) // 硬度5.0
                     .sound(SoundType.ANVIL) //声音 铁砧
             ));
+
+
+    public static void register(IEventBus bus){
+        BLOCKS.register(bus);
+    }
 
 }
