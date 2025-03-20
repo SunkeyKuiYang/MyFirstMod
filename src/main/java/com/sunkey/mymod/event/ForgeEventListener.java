@@ -1,10 +1,17 @@
 package com.sunkey.mymod.event;
 
 import com.sunkey.mymod.MyMod;
+import com.sunkey.mymod.capability.farmxp.PlayerFarmXp;
+import com.sunkey.mymod.capability.farmxp.PlayerFarmXpProvider;
+import com.sunkey.mymod.command.GetFarmXpCommand;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.StemBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import static net.minecraft.world.level.block.StemBlock.AGE;
@@ -33,6 +40,43 @@ public class ForgeEventListener {
             event.getLevel().setBlock(event.getPos(), blockState.setValue(AGE, blockState.getValue(AGE) < MAX_AGE ? blockState.getValue(AGE) + 1 : 7), 2);
             itemStack.shrink(1);// 骨粉数量-1
             event.setCanceled(true);//取消默认事件
+        }
+    }
+
+    /**
+     * 注册获取玩家农业经验命令
+     * @param event 命令注册相关事件
+     */
+    @SubscribeEvent
+    public static void registerFarmXpCommand(RegisterCommandsEvent event){
+        GetFarmXpCommand.register(event.getDispatcher());
+    }
+
+    /**
+     * 收取作物增长农业经验
+     * @param event 破坏行为相关事件
+     */
+    @SubscribeEvent
+    public static void breakCropToIncreaseFarmXp(BlockEvent.BreakEvent event){
+        // 如果破坏的是作物
+        if (event.getState().getBlock() instanceof CropBlock) {
+            // 增长玩家的农业经验
+            event.getPlayer().getCapability(PlayerFarmXpProvider.PLAYER_FARM_XP_CAPABILITY).ifPresent(PlayerFarmXp::increase);
+        }
+    }
+
+    /**
+     * 对带梗的作物使用骨粉需要农业经验
+     * @param event 玩家使用骨粉时的相关事件
+     */
+    @SubscribeEvent
+    public static void decreaseFarmXpToPreventStem(BonemealEvent event){
+        BlockState blockState = event.getBlock();
+        if (blockState.getBlock() instanceof StemBlock) {
+           event.getEntity().getCapability(PlayerFarmXpProvider.PLAYER_FARM_XP_CAPABILITY).ifPresent( (xp) -> {
+               //判断农业经验够不够，不够的话再取消mc默认事件
+               if (!xp.decrease()) event.setCanceled(true);
+           });
         }
     }
 }

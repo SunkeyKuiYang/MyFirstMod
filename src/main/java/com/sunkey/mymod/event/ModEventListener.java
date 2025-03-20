@@ -1,6 +1,9 @@
 package com.sunkey.mymod.event;
 
 import com.sunkey.mymod.MyMod;
+import com.sunkey.mymod.capability.farmxp.PlayerFarmXpProvider;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 /**
@@ -11,4 +14,14 @@ import net.minecraftforge.fml.common.Mod;
  */
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MyMod.MOD_ID)
 public class ModEventListener {
+
+
+    /**
+     * 农业经验能力注册
+     * @param event 能力注册相关事件
+     */
+    @SubscribeEvent
+    public static void registerCapability(RegisterCapabilitiesEvent event){
+        event.register(PlayerFarmXpProvider.class);
+    }
 }

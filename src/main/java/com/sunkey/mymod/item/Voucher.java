@@ -24,6 +24,7 @@ public class Voucher extends Item {
     }
 
     // 在物品上使用(右击物品)
+    @Override
     public InteractionResult useOn(UseOnContext p_186371_){
         //拿到事件点击的方块
         Level level = p_186371_.getLevel();
