@@ -2,6 +2,7 @@ package com.sunkey.mymod;
 
 import com.mojang.logging.LogUtils;
 import com.sunkey.mymod.capability.farmxp.PlayerFarmXpProvider;
+import com.sunkey.mymod.config.CommonConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -9,6 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
@@ -32,6 +34,7 @@ public class MyMod {
         ModEffects.register(bus); // 效果注册
         ModCreativeModeTabs.register(bus); // 创造模式物品栏注册
         MinecraftForge.EVENT_BUS.addGenericListener(Entity.class, this::attachCapability);// 为玩家附加农业经验能力
+        context.registerConfig(ModConfig.Type.COMMON, CommonConfig.COMMON_CONFIG_SPEC);// 注册通用配置文件，类型选择客户端服务器端均可
     }
 
     /**
