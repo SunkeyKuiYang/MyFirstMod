@@ -1,0 +1,47 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/template_fence_gate",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "mymod:block/small_metal_door_open",
+		"particle": "mymod:block/small_metal_door_open"
+	},
+	"elements": [
+		{
+			"name": "cube1",
+			"from": [8, 0, 0],
+			"to": [16, 16, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 1]},
+			"faces": {
+				"north": {"uv": [5, 0, 7, 4], "texture": "#0"},
+				"east": {"uv": [0.5, 6, 1, 10], "texture": "#0"},
+				"south": {"uv": [5, 4, 7, 8], "texture": "#0"},
+				"west": {"uv": [0, 6, 0.5, 10], "texture": "#0"},
+				"up": {"uv": [1.5, 8, 1, 6], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [2, 6, 1.5, 8], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "cube2",
+			"from": [8, 0, 14],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 15]},
+			"faces": {
+				"north": {"uv": [0.5, 0.5, 2.5, 4.5], "texture": "#0"},
+				"east": {"uv": [0, 0.5, 0.5, 4.5], "texture": "#0"},
+				"south": {"uv": [3, 0.5, 5, 4.5], "texture": "#0"},
+				"west": {"uv": [2.5, 0.5, 3, 4.5], "texture": "#0"},
+				"up": {"uv": [2.5, 0.5, 0.5, 0], "texture": "#0"},
+				"down": {"uv": [4.5, 0, 2.5, 0.5], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

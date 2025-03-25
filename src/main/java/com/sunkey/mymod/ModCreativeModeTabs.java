@@ -37,6 +37,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUPER_BLOCK_ITEM.get());
                         output.accept(ModItems.VENDING_ITEM.get());
                         output.accept(ModItems.VOUCHER.get());
+                        output.accept(ModItems.SMALL_METAL_DOOR_ITEM.get());
                     })
                     .build());
 

@@ -65,6 +65,10 @@ public class ModItems {
     public static final RegistryObject<Item> VOUCHER = ITEMS.register("voucher",
             () -> new Voucher(new Item.Properties()));
 
+    // small_metal_door 小金属门（物品）
+    public static final RegistryObject<Item> SMALL_METAL_DOOR_ITEM = ITEMS.register("small_metal_door",
+            () -> new BlockItem(ModBlocks.SMALL_METAL_DOOR.get(), new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -6,5 +6,6 @@
   "main.mymod.mymod_tab": "我的模组",
   "block.mymod.super_block": "超级方块",
   "block.mymod.vending": "自动贩卖机",
-  "item.mymod.voucher": "兑换券"
+  "item.mymod.voucher": "兑换券",
+  "block.mymod.small_metal_door": "小金属门"
 }

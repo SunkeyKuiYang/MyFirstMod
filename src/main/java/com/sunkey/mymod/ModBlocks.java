@@ -1,5 +1,6 @@
 package com.sunkey.mymod;
 
+import com.sunkey.mymod.block.SmallMetalDoor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -35,6 +36,13 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(5.0F) // 硬度5.0
                     .sound(SoundType.ANVIL) //声音 铁砧
+            ));
+
+    // small_metal_door 小金属门
+    public static final RegistryObject<Block> SMALL_METAL_DOOR = BLOCKS.register("small_metal_door",
+            () -> new SmallMetalDoor(BlockBehaviour.Properties.of()
+                    .strength(5.0F)
+                    .sound(SoundType.STONE)
             ));
 
 

@@ -1,0 +1,45 @@
+{
+  "variants": {
+    "facing=east,open=false": [
+      {
+        "model": "mymod:block/small_metal_door"
+      }
+    ],
+    "facing=east,open=true": [
+      {
+      "model": "mymod:block/small_metal_door_open"
+      }
+    ],
+    "facing=south,open=false": [
+      {
+      "model": "mymod:block/small_metal_door",
+      "y": 90
+      }
+    ],
+    "facing=south,open=true": [
+      {
+      "model": "mymod:block/small_metal_door_open",
+      "y": 90
+      }
+    ],
+    "facing=west,open=false": [
+      {
+        "model": "mymod:block/small_metal_door",
+        "y": 180
+      }
+    ],
+    "facing=west,open=true": [{
+      "model": "mymod:block/small_metal_door_open",
+      "y": 180
+    }],
+    "facing=north,open=false": [{
+      "model": "mymod:block/small_metal_door",
+      "y": 270
+    }],
+    "facing=north,open=true": [{
+      "model": "mymod:block/small_metal_door_open",
+      "y": 270
+    }
+    ]
+  }
+}
